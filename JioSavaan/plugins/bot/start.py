@@ -90,12 +90,13 @@ async def start_pm(client, message: Message, _):
     else:
         out = private_panel(_)
         UP, CPU, RAM, DISK = await bot_sys_stats()
-        lol = await message.reply_sticker(
+        loll = await message.reply_sticker(
             "CAACAgUAAyEFAASNZqMKAAJAxGeOFAar_Tu5KhHAXekUAAFenGRC9gAC7BcAAhx0IFeN9lIxUpbu0B4E"
         )
 
     await asyncio.sleep(0.5)
-    await lol.edit_text("ꜱ")
+    await loll.delete
+    lol await message.reply_text("ꜱ")
     await asyncio.sleep(0.1)
     await lol.edit_text("ꜱᴛ")
     await asyncio.sleep(0.1)
@@ -112,23 +113,23 @@ async def start_pm(client, message: Message, _):
     await lol.edit_text("ꜱᴛᴀʀᴛɪɴɢ")
     await asyncio.sleep(0.1)
     await lol.edit_text("ꜱᴛᴀʀᴛɪɴɢ.")
-    await asyncio.sleep(0.2)
+    await asyncio.sleep(0.1)
     await lol.edit_text("ꜱᴛᴀʀᴛɪɴɢ..")
     await asyncio.sleep(0.1)
     await lol.edit_text("ꜱᴛᴀʀᴛɪɴɢ...")
-    await asyncio.sleep(0.1)
+    await asyncio.sleep(0.2)
     await lol.edit_text("ꜱᴛᴀʀᴛɪɴɢ.")
-    await asyncio.sleep(0.2)
+    await asyncio.sleep(0.1)
     await lol.edit_text("ꜱᴛᴀʀᴛɪɴɢ..")
     await asyncio.sleep(0.1)
     await lol.edit_text("ꜱᴛᴀʀᴛɪɴɢ...")
-    await asyncio.sleep(0.1)
+    await asyncio.sleep(0.2)
     await lol.edit_text("ꜱᴛᴀʀᴛɪɴɢ.")
-    await asyncio.sleep(0.2)
+    await asyncio.sleep(0.1)
     await lol.edit_text("ꜱᴛᴀʀᴛɪɴɢ..")
     await asyncio.sleep(0.1)
     await lol.edit_text("ꜱᴛᴀʀᴛɪɴɢ...")
-    await asyncio.sleep(0.2)
+    await asyncio.sleep(0.1)
     await lol.delete()      
 
     await message.reply_photo(
