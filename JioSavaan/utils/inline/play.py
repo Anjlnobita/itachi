@@ -52,20 +52,14 @@ def stream_markup_timer(_, chat_id, played, dur):
         bar = "▰▰▰▰▰▰▰▰▰"
     else:
         bar = "▱▱▱▱▱▱▱▱▱"
-##bar of wynk---------------------------------------
     buttons = [
-        
         [
             InlineKeyboardButton(
-                text=f"{played} {ba} {dur}",
+                text=f"{played} {bar} {dur}",
                 callback_data="GetTimer",
             )
-        ]
-    return buttons
-
-def stream_markup(_, chat_id):
-    buttons = [
-       [
+        ],
+        [
             InlineKeyboardButton(text="ᴘᴀᴜsᴇ", callback_data=f"ADMIN Pause|{chat_id}"),
             InlineKeyboardButton(text="ʀᴇsᴜᴍᴇ", callback_data=f"ADMIN Resume|{chat_id}"),
             InlineKeyboardButton(text="sᴋɪᴘ", callback_data=f"ADMIN Skip|{chat_id}")
@@ -79,6 +73,26 @@ def stream_markup(_, chat_id):
             InlineKeyboardButton(text=_["CLOSE_BUTTON"], callback_data="close")],
         ]
     return buttons
+
+
+def stream_markup(_, chat_id):
+    buttons = [
+        [
+            InlineKeyboardButton(text="ᴘᴀᴜsᴇ", callback_data=f"ADMIN Pause|{chat_id}"),
+            InlineKeyboardButton(text="ʀᴇsᴜᴍᴇ", callback_data=f"ADMIN Resume|{chat_id}"),
+            InlineKeyboardButton(text="sᴋɪᴘ", callback_data=f"ADMIN Skip|{chat_id}")
+        ],
+        [
+            InlineKeyboardButton(text="sᴛᴏᴘ", callback_data=f"ADMIN Stop|{chat_id}"),
+            InlineKeyboardButton(text="ʀᴇᴘʟᴀʏ", callback_data=f"ADMIN Replay|{chat_id}"),
+        ],
+        [
+
+            InlineKeyboardButton(text=_["CLOSE_BUTTON"], callback_data="close")],
+        ]
+    return buttons
+
+
 
 
 def playlist_markup(_, videoid, user_id, ptype, channel, fplay):
