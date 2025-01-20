@@ -91,7 +91,7 @@ async def start_pm(client, message: Message, _):
         out = private_panel(_)
         UP, CPU, RAM, DISK = await bot_sys_stats()
         lol = await message.reply_sticker(
-            ""
+            "CAACAgUAAyEFAASNZqMKAAJAxGeOFAar_Tu5KhHAXekUAAFenGRC9gAC7BcAAhx0IFeN9lIxUpbu0B4E"
         )
 
     await asyncio.sleep(0.5)
