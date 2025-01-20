@@ -67,48 +67,48 @@ async def get_thumb(videoid):
         youtube = Image.open(f"cache/thumb{videoid}.png")
         image1 = changeImageSize(1280, 720, youtube)
         image2 = image1.convert("RGBA")
-        background = image2.filter(filter=ImageFilter.BoxBlur(0))
+        background = image2.filter(filter=ImageFilter.BoxBlur(10))
         enhancer = ImageEnhance.Brightness(background)
-        background = enhancer.enhance(1.1)
+        background = enhancer.enhance(0.5)
         draw = ImageDraw.Draw(background)
-        arial = ImageFont.truetype("JioSavaan/assets/font2.ttf", 49)
-        font = ImageFont.truetype("JioSavaan/assets/font.ttf", 48)
-        draw.text((1000, 8), unidecode(app.name), fill="Green", font=font)
-    #    draw.text(
-    #        (55, 560),
-    #        f"{channel} | {views[:23]}",
-    #        (255, 255, 255),
-    #        font=arial,
-    #    )
+        arial = ImageFont.truetype("NEXTURNxMUSIC/assets/font2.ttf", 30)
+        font = ImageFont.truetype("NEXTURNxMUSIC/assets/font.ttf", 30)
+        draw.text((1110, 8), unidecode(app.name), fill="white", font=arial)
         draw.text(
-            (40, 570),
+            (55, 560),
+            f"{channel} | {views[:23]}",
+            (255, 255, 255),
+            font=arial,
+        )
+        draw.text(
+            (57, 600),
             clear(title),
-            (0, 0, 0), 
+            (255, 255, 255),
             font=font,
         )
         draw.line(
             [(55, 660), (1220, 660)],
-            fill="green",
-            width=15,
+            fill="white",
+            width=5,
             joint="curve",
         )
         draw.ellipse(
             [(918, 648), (942, 672)],
-            outline="black",
-            fill="black",
-            width=30,
+            outline="white",
+            fill="white",
+            width=15,
         )
         draw.text(
-            (36, 670),
+            (36, 685),
             "00:00",
-            (0, 0, 0),
-            font=font,
+            (255, 255, 255),
+            font=arial,
         )
         draw.text(
-            (1185, 670),
+            (1185, 685),
             f"{duration[:23]}",
-            (0, 0, 0),
-            font=font,
+            (255, 255, 255),
+            font=arial,
         )
         try:
             os.remove(f"cache/thumb{videoid}.png")
