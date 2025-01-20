@@ -4,12 +4,13 @@ from pyrogram import filters
 from pyrogram.enums import ChatType
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 from youtubesearchpython.__future__ import VideosSearch
+import asyncio
 
 import config
-from JioSavaan import app
-from JioSavaan.misc import _boot_
-from JioSavaan.plugins.sudo.sudoers import sudoers_list
-from JioSavaan.utils.database import (
+from JioSaavn import app
+from JioSaavn.misc import _boot_
+from JioSaavn.plugins.sudo.sudoers import sudoers_list
+from JioSaavn.utils.database import (
     add_served_chat,
     add_served_user,
     blacklisted_chats,
@@ -17,9 +18,10 @@ from JioSavaan.utils.database import (
     is_banned_user,
     is_on_off,
 )
-from JioSavaan.utils.decorators.language import LanguageStart
-from JioSavaan.utils.formatters import get_readable_time
-from JioSavaan.utils.inline import help_pannel, private_panel, start_panel
+from JioSaavn.utils import bot_sys_stats
+from JioSaavn.utils.decorators.language import LanguageStart
+from JioSaavn.utils.formatters import get_readable_time
+from JioSaavn.utils.inline import help_pannel, private_panel, start_panel
 from config import BANNED_USERS
 from strings import get_string
 
@@ -34,14 +36,15 @@ async def start_pm(client, message: Message, _):
             keyboard = help_pannel(_)
             return await message.reply_photo(
                 photo=config.START_IMG_URL,
-                caption=_["help_1"].format(config.SUPPORT_CHAT),
+                caption=_["help_1"].format(config.SUPPORT_GROUP),
+                protect_content=True,
                 reply_markup=keyboard,
             )
         if name[0:3] == "sud":
             await sudoers_list(client=client, message=message, _=_)
             if await is_on_off(2):
                 return await app.send_message(
-                    chat_id=config.LOGGER_ID,
+                    chat_id=config.LOG_GROUP_ID,
                     text=f"{message.from_user.mention} ᴊᴜsᴛ sᴛᴀʀᴛᴇᴅ ᴛʜᴇ ʙᴏᴛ ᴛᴏ ᴄʜᴇᴄᴋ <b>sᴜᴅᴏʟɪsᴛ</b>.\n\n<b>ᴜsᴇʀ ɪᴅ :</b> <code>{message.from_user.id}</code>\n<b>ᴜsᴇʀɴᴀᴍᴇ :</b> @{message.from_user.username}",
                 )
             return
@@ -66,7 +69,7 @@ async def start_pm(client, message: Message, _):
                 [
                     [
                         InlineKeyboardButton(text=_["S_B_8"], url=link),
-                        InlineKeyboardButton(text=_["S_B_9"], url=config.SUPPORT_CHAT),
+                        InlineKeyboardButton(text=_["S_B_9"], url=config.SUPPORT_GROUP),
                     ],
                 ]
             )
@@ -79,19 +82,64 @@ async def start_pm(client, message: Message, _):
             )
             if await is_on_off(2):
                 return await app.send_message(
-                    chat_id=config.LOGGER_ID,
+                    chat_id=config.LOG_GROUP_ID,
                     text=f"{message.from_user.mention} ᴊᴜsᴛ sᴛᴀʀᴛᴇᴅ ᴛʜᴇ ʙᴏᴛ ᴛᴏ ᴄʜᴇᴄᴋ <b>ᴛʀᴀᴄᴋ ɪɴғᴏʀᴍᴀᴛɪᴏɴ</b>.\n\n<b>ᴜsᴇʀ ɪᴅ :</b> <code>{message.from_user.id}</code>\n<b>ᴜsᴇʀɴᴀᴍᴇ :</b> @{message.from_user.username}",
                 )
     else:
         out = private_panel(_)
-        await message.reply_photo(
+        UP, CPU, RAM, DISK = await bot_sys_stats()
+        lol = await message.reply_sticker(
+            ""
+        )
+
+    await asyncio.sleep(0.1)
+    await lol.edit_text("🌸")
+    await asyncio.sleep(0.5)
+    await lol.edit_text("ꜱᴛᴀʀᴛɪɴɢ.")
+    await asyncio.sleep(0.1)
+    await lol.edit_text("ꜱᴛᴀʀᴛɪɴɢ..")
+    await asyncio.sleep(0.1)
+    await lol.edit_text("ꜱᴛᴀʀᴛɪɴɢ...")
+    await asyncio.sleep(0.2)
+    await lol.edit_text("ꜱᴛᴀʀᴛɪɴɢ.")
+    await asyncio.sleep(0.1)
+    await lol.edit_text("ꜱᴛᴀʀᴛɪɴɢ..")
+    await asyncio.sleep(0.1)
+    await lol.edit_text("ꜱᴛᴀʀᴛɪɴɢ...")
+    await asyncio.sleep(0.2)
+    await lol.edit_text("ꜱᴛᴀʀᴛɪɴɢ.")
+    await asyncio.sleep(0.1)
+    await lol.edit_text("ꜱᴛᴀʀᴛɪɴɢ..")
+    await asyncio.sleep(0.1)
+    await lol.edit_text("ꜱᴛᴀʀᴛɪɴɢ...")
+    await asyncio.sleep(0.2)
+    await lol.edit_text("ꜱᴛᴀʀᴛɪɴɢ.")
+    await asyncio.sleep(0.1)
+    await lol.edit_text("ꜱᴛᴀʀᴛɪɴɢ..")
+    await asyncio.sleep(0.1)
+    await lol.edit_text("ꜱᴛᴀʀᴛɪɴɢ...")
+    await asyncio.sleep(0.2)
+    await lol.edit_text("ꜱᴛᴀʀᴛɪɴɢ.")
+    await asyncio.sleep(0.1)
+    await lol.edit_text("ꜱᴛᴀʀᴛɪɴɢ..")
+    await asyncio.sleep(0.1)
+    await lol.edit_text("ꜱᴛᴀʀᴛɪɴɢ...")
+    await asyncio.sleep(0.2)
+    await lol.edit_text("ꜱᴛᴀʀᴛɪɴɢ.")
+    await asyncio.sleep(0.1)
+    await lol.edit_text("ꜱᴛᴀʀᴛɪɴɢ..")
+    await asyncio.sleep(0.1)
+    await lol.edit_text("ꜱᴛᴀʀᴛɪɴɢ...")
+    await lol.delete()      
+
+    await message.reply_photo(
             photo=config.START_IMG_URL,
-            caption=_["start_2"].format(message.from_user.mention, app.mention),
+            caption=_["start_2"].format(message.from_user.mention, app.mention, UP, DISK, CPU, RAM),
             reply_markup=InlineKeyboardMarkup(out),
         )
-        if await is_on_off(2):
+    if await is_on_off(2):
             return await app.send_message(
-                chat_id=config.LOGGER_ID,
+                chat_id=config.LOG_GROUP_ID,
                 text=f"{message.from_user.mention} ᴊᴜsᴛ sᴛᴀʀᴛᴇᴅ ᴛʜᴇ ʙᴏᴛ.\n\n<b>ᴜsᴇʀ ɪᴅ :</b> <code>{message.from_user.id}</code>\n<b>ᴜsᴇʀɴᴀᴍᴇ :</b> @{message.from_user.username}",
             )
 
@@ -129,7 +177,7 @@ async def welcome(client, message: Message):
                         _["start_5"].format(
                             app.mention,
                             f"https://t.me/{app.username}?start=sudolist",
-                            config.SUPPORT_CHAT,
+                            config.SUPPORT_GROUP,
                         ),
                         disable_web_page_preview=True,
                     )
