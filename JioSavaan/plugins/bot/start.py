@@ -7,10 +7,10 @@ from youtubesearchpython.__future__ import VideosSearch
 import asyncio
 
 import config
-from JioSaavn import app
-from JioSaavn.misc import _boot_
-from JioSaavn.plugins.sudo.sudoers import sudoers_list
-from JioSaavn.utils.database import (
+from JioSavaan import app
+from JioSavaan.misc import _boot_
+from JioSavaan.plugins.sudo.sudoers import sudoers_list
+from JioSavaan.utils.database import (
     add_served_chat,
     add_served_user,
     blacklisted_chats,
@@ -18,10 +18,10 @@ from JioSaavn.utils.database import (
     is_banned_user,
     is_on_off,
 )
-from JioSaavn.utils import bot_sys_stats
-from JioSaavn.utils.decorators.language import LanguageStart
-from JioSaavn.utils.formatters import get_readable_time
-from JioSaavn.utils.inline import help_pannel, private_panel, start_panel
+from JioSavaan.utils import bot_sys_stats
+from JioSavaan.utils.decorators.language import LanguageStart
+from JioSavaan.utils.formatters import get_readable_time
+from JioSavaan.utils.inline import help_pannel, private_panel, start_panel
 from config import BANNED_USERS
 from strings import get_string
 
