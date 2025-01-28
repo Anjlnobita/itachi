@@ -1,3 +1,5 @@
+"""
+
 from pyrogram import Client
 
 import config
@@ -168,3 +170,6 @@ class Userbot(Client):
                 await self.five.stop()
         except:
             pass
+
+
+"""
